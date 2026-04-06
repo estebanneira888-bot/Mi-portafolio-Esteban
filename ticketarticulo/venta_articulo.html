@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tarjeta de Producto</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: hsl(207, 80%, 84%);
+}
+
+.tarjeta{
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    margin: 50px auto;
+    padding: 15px;
+}
+
+.tarjeta img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.nombre{
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.precio{
+    color: green;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.color{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    display:inline-block;
+    margin:5px;
+    
+}
+
+.gris{background:hwb(0 56% 43%);}
+.negro{background:#000000;}
+.rojo{background:hsl(2, 100%, 50%);}
+
+.descripcion{
+    color: #000000;
+}
+
+button{
+    background: hsl(36, 100%, 50%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: lch(70.39% 77.25 72.96);
+}
+
+   .boton{
+            background-color: rgb(255, 0, 0);
+            padding: 15px;
+            color: aliceblue;
+        }
+        
+        
+</style>
+  <a href="../index.html" class="boton">←VOLVER</a>
+</head>
+<body>
+
+<div class="tarjeta">
+    <img src="https://s.alicdn.com/@sc04/kf/H932acd5aac5b42e38016464f1d33d23c1/China-Wholesale-Children-s-20-Inch-Single-Speed-Street-BMX-Bicycle-High-Carbon-Steel-Frame-No-Tail-Freestyle-Customized-Bike.jpg" alt="Producto">
+
+<div class="colores">
+<span class="color gris"></span>
+<span class="color negro"></span>
+<span class="color rojo"></span>
+</div>
+
+    <h2 class="nombre">Bicicleta BMX</h2>
+
+    <p class="precio">$1,400,000</p>
+    <p class="descripcion">
+        Bicicleta BMX para principiantes, ideal para el uso recreativo y deportivo.
+    </p>
+
+    <button>Comprar</button>
+    <button>Agregar al Carrito</button>
+</div>
+
+
+
+</body>
+</html>
