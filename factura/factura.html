@@ -201,17 +201,9 @@
       font-size:18px;
     }
 
-    .etiquetas-totales {
-      width: 20%;
-      text-align: right;
-      padding: 30px 20px;
-      font-size: 15px;
-      line-height: 2;
-      color: #333;
-    }
 
     .valores-totales {
-      width:30%;
+      width:20%;
       background-color:#333a3d;
       padding:25px 35px;
       color:rgba(255, 255, 255, 0.534);
@@ -220,19 +212,30 @@
     }
 
     .etiquetas-totales{
-      width:74.75%;
+      width:40%;
       background-color:hsl(0, 0%, 100%);
       padding:15px 35px;
       text-align: left;
       font-weight: 900;
-      margin:0px;
+      margin:0;
+      text-align: center;
+    }
+
+    .seccion-totales{
+      text-align: center;
+    }
+
+    .subfinal{
+      margin: 10px 0px;
+      text-align: right;
     }
 
     .total1{
       color: #31303093;
       font-weight: 900;
       font-size: 20px;
-      margin: 15px 0px;
+      margin: 30px 0px;
+      text-align: right;
     }
 
     .total{
@@ -244,7 +247,7 @@
 
     .final{
       background-color: #ffffff;
-      padding:2px;
+      padding: 2px;
     }
 
     .final1{
@@ -380,10 +383,10 @@
 
     <div class="seccion-totales">
       <div class="etiquetas-totales">
-        <div>Subtotal</div>
-        <div>Taxes</div>
-        <div>Shipping</div>
-        <div>Discount</div>
+        <div class="subfinal">Subtotal</div>
+        <div class="subfinal">Taxes</div>
+        <div class="subfinal">Shipping</div>
+        <div class="subfinal">Discount</div>
         <div class="total1">TOTAL</div>
       </div>
       <div class="valores-totales">
