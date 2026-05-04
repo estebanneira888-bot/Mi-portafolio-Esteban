@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background-color:#b2cdd8;
+      padding:20px 50px;
+      font-family:Arial, sans-serif;
+    }
+
+    .contenedor{
+      width:900px;
+      display:flex;
+      margin:auto;
+      align-items:stretch;
+    }
+
+    .izquierda{
+      width:70%;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .derecha{
+      width:30%;
+      background-color:#333a3d;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .isquierdo{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background-color:#d8d5d5;
+      height:140px;
+      padding:0 30px;
+    }
+
+    .titulo1{
+      display:flex;
+      align-items:center;
+      gap:15px;
+    }
+
+    .logo-img{
+      width:90px;
+    }
+
+    .xy{
+      font-size:35px;
+      font-weight:900;
+      color:#111;
+    }
+
+    .yx{
+      font-size:14px;
+      color:#666;
+      margin-top:5px;
+      letter-spacing:1px;
+    }
+
+    .derecho-header{
+      height:140px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .yz{
+      color:#ffffff;
+      font-size:35px;
+      font-weight:500;
+      letter-spacing:9px;
+    }
+
+    .contenido{
+      display:flex;
+      justify-content:space-between;
+      background-color:#ffffff;
+      padding:35px 40px;
+    }
+
+    .segundaiz{
+      width:45%;
+    }
+
+    .segundaiz h3{
+      font-size:18px;
+      font-weight:900;
+      color:#000000;
+      margin-bottom:10px;
+    }
+
+    .segundaiz p{
+      font-size:14px;
+      color:#777777;
+      line-height:1.6;
+    }
+
+    .segundader{
+      width:45%;
+      text-align:right;
+    }
+
+    .segundader h3{
+      font-size:18px;
+      font-weight:900;
+      color:#000;
+      margin-bottom:10px;
+    }
+
+    .segundader p{
+      font-size:14px;
+      color:#666;
+      line-height:1.6;
+    }
+
+    .panel-derecho{
+      padding:25px;
+    }
+
+    .panel-derecho h4{
+      font-size:14px;
+      color:#d6d6d6;
+      margin-bottom:3px;
+      margin-top:15px;
+      text-align:center;
+    }
+
+    .panel-derecho p{
+      font-size:13px;
+      color:#ffffff;
+      text-align:center;
+    }
+
+    .tabla-contenedor{
+      width:900px;
+      display:flex;
+      margin:auto;
+    }
+
+    .tabla-izquierda{
+      width:70%;
+      background-color:#d8d5d5;
+      padding:25px 35px;
+    }
+
+    .tabla-derecha{
+      width:30%;
+      background-color:#333a3d;
+      padding:25px 35px;
+      color:white;
+      text-align: center;
+    }
+
+    .encabezado-tabla{
+      display:grid;
+      grid-template-columns:50px 1fr 120px;
+      font-weight:bold;
+      color:#222;
+      margin-bottom:0px;
+      font-size:18px;
+    }
+
+    .fila-tabla{
+      display:grid;
+      grid-template-columns:50px 1fr 120px;
+      padding:12px 3px;
+      color:#333;
+      font-size:18px;
+    }
+
+    .encabezado-derecha{
+      display:grid;
+      grid-template-columns:70px 1fr;
+      font-weight:bold;
+      font-size:18px;
+    }
+
+    .fila-derecha{
+      display:grid;
+      grid-template-columns:70px 1fr;
+      padding:12px 0;
+      font-size:18px;
+    }
+
+    .seccion-totales{
+      width:900px;
+      display:flex;
+      margin:auto;
+    }
+
+    .etiquetas-totales{
+      width:70%;
+      background-color:#ffffff;
+      padding:25px 35px;
+      text-align:right;
+      font-weight:900;
+    }
+
+    .valores-totales{
+      width:30%;
+      background-color:#333a3d;
+      padding:25px 35px;
+      color:rgba(255, 255, 255, 0.7);
+      text-align:right;
+    }
+
+    .total1{
+      color:#555;
+      font-weight:900;
+      font-size:20px;
+      margin-top:15px;
+    }
+
+    .totales{
+      margin-top: 10px;
+    }
+
+    .num{
+      margin: 15px 0px;
+      text-align: justify;
+    }
+
+    .le{
+      margin: 15px 0px;
+    }
+
+
+    .tabla-izquierda::after{
+      font-size:120px;
+      color:rgba(120,120,120,0.15);
+    }
+
+    .fila-tabla{
+      border-bottom:3 solid #cfcfcf;
+    }
+
+    .total-final{
+      width:900px;
+      margin:auto;
+      display:flex;
+    }
+
+    .total-texto{
+      width:70%;
+      background:#fff;
+      text-align:right;
+      padding:20px 35px;
+      font-size:20px;
+    }
+
+    .total-valor{
+      width:30%;
+      background:#2c3a3a;
+      color:#fff;
+      padding:20px 35px;
+      text-align:left;
+      font-size:22px;
+    }
+
+
+    .extra{
+      width:900px;
+      margin:auto;
+      display:flex;
+    }
+
+    .extra-iz{
+      width:70%;
+      background:#fff;
+      padding:25px 35px;
+      font-size:13px;
+      color:#555;
+    }
+
+    .extra-der{
+      width:30%;
+      background:#2c3a3a;
+      padding:25px 35px;
+      color:white;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+    }
+
+    .firma{
+      width:100%;
+      border-top:3px solid rgba(255,255,255,0.5);
+      text-align:center;
+      padding-top:10px;
+      font-size:12px;
+    }
+
+    .rectangulo1{
+        border-top:15px solid rgba(7, 7, 7, 0.5);
+        margin-right:400px;
+    }
+
+    .rectangulo2{
+      border-top:15px solid rgba(7, 7, 7, 0.5);
+      width: 20%;
+      margin: 10px 0px;
+    }
+
+@media (max-width: 768px){
+
+  body{
+    padding:20px;
+  }
+
+  .contenedor,
+  .tabla-contenedor,
+  .seccion-totales,
+  .total-final,
+  .extra{
+    width:100%;
+    flex-direction:column;
+  }
+
+  .izquierda,
+  .derecha,
+  .tabla-izquierda,
+  .tabla-derecha,
+  .etiquetas-totales,
+  .valores-totales,
+  .total-texto,
+  .total-valor,
+  .extra-iz,
+  .extra-der{
+    width:100%;
+  }
+
+  .contenido{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .segundaiz,
+  .segundader{
+    width:100%;
+    text-align:left;
+  }
+
+  .segundader{
+    text-align:left;
+  }
+
+  .derecha{
+    margin-top:10px;
+  }
+
+  .tabla-izquierda,
+  .tabla-derecha{
+    padding:20px;
+  }
+
+  .encabezado-tabla,
+  .fila-tabla{
+    grid-template-columns:40px 1fr 80px;
+    font-size:14px;
+  }
+
+  .encabezado-derecha,
+  .fila-derecha{
+    grid-template-columns:50px 1fr;
+    font-size:14px;
+  }
+
+  .total-texto,
+  .total-valor{
+    text-align:center;
+  }
+
+  .extra-der{
+    justify-content:center;
+    align-items:center;
+    height:120px;
+  }
+
+  .rectangulo1{
+    margin-right:0;
+  }
+
+}
+
+
+@media (max-width: 400px){
+
+  .xy{
+    font-size:20px;
+  }
+
+  .yz{
+    font-size:22px;
+    letter-spacing:4px;
+  }
+
+  .logo-img{
+    width:60px;
+  }
+
+  .encabezado-tabla,
+  .fila-tabla{
+    grid-template-columns:30px 1fr 70px;
+    font-size:12px;
+  }
+
+  .encabezado-derecha,
+  .fila-derecha{
+    font-size:12px;
+  }
+
+  .panel-derecho h4,
+  .panel-derecho p{
+    font-size:12px;
+  }
+
+  .total-texto{
+    font-size:16px;
+  }
+
+  .total-valor{
+    font-size:18px;
+  }
+
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="contenedor">
+
+    <div class="izquierda">
+
+      <header class="isquierdo">
+        <div class="titulo1">
+          <img src="/portafolio/img/imagen-factura.png" alt="Logo" class="logo-img">
+          <div class="titulo">
+            <h1 class="xy">COMPANY NAME</h1>
+            <p class="yx">BRANDING TAGLINE SPACE HERE</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="contenido">
+        <div class="segundaiz">
+          <h3>Additional notes</h3>
+          <p>
+            Ut enim ad minim veniam,<br>
+            quis nostrud exercitation ullamco<br>
+            laboris nisi ut aliquip<br>
+            ex ea commodo consequat.
+          </p>
+        </div>
+
+        <div class="segundader">
+          <h3>Invoice to:</h3>
+          <p>
+            <strong>JOHN SMITH</strong><br>
+            123 GREEN LAKE ST.<br>
+            CITY STATE<br>
+            COUNTRY
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="derecha">
+      <div class="derecho-header">
+        <h2 class="yz">INVOICE</h2>
+      </div>
+
+      <div class="panel-derecho">
+        <h4>INVOICE DATE</h4>
+        <p>01.09.2024</p>
+        <h4>DUE DATE</h4>
+        <p>03.12.2024</p>
+        <h4>INVOICE #</h4>
+        <p>14256</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tabla-contenedor">
+    <div class="tabla-izquierda">
+      <div class="encabezado-tabla">
+        <div>#</div>
+        <div>Product Description</div>
+        <div>Price</div>
+      </div>
+
+      <div class="fila-tabla">
+        <div>1</div>
+        <div>Item 1</div>
+        <div>$30.50</div>
+      </div>
+
+      <div class="fila-tabla">
+        <div>2</div>
+        <div>Item 2</div>
+        <div>$50.00</div>
+      </div>
+
+      <div class="fila-tabla">
+        <div>3</div>
+        <div>Item 3</div>
+        <div>$70.00</div>
+      </div>
+
+      <div class="fila-tabla">
+        <div>4</div>
+        <div>Item 4</div>
+        <div>$20.00</div>
+      </div>
+    </div>
+
+    <div class="tabla-derecha">
+      <div class="encabezado-derecha">
+        <div>Qty</div>
+        <div>Total</div>
+      </div>
+
+      <div class="fila-derecha">
+        <div>3</div>
+        <div>$91.50</div>
+      </div>
+
+      <div class="fila-derecha">
+        <div>1</div>
+        <div>$50.00</div>
+      </div>
+
+      <div class="fila-derecha">
+        <div>5</div>
+        <div>$350.00</div>
+      </div>
+
+      <div class="fila-derecha">
+        <div>2</div>
+        <div>$40.00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion-totales">
+    <div class="etiquetas-totales">
+      <div class="le">Subtotal</div>
+      <div class="le">Taxes</div>
+      <div class="le">Shipping</div>
+      <div class="le">Discount</div>
+    </div>
+
+    <div class="valores-totales">
+      <div class="totales">
+        <div class="num">$531.80</div>
+        <div class="num">$63.78</div>
+        <div class="num">$72.00</div>
+        <div class="num">-$15.00</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOTAL FINAL -->
+<div class="total-final">
+  <div class="total-texto">TOTAL</div>
+  <div class="total-valor">$592.28</div>
+</div>
+
+<!-- TERMINOS Y PAGO -->
+<div class="extra">
+  <div class="extra-iz">
+    <h3>Terms and conditions</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+
+    <br>
+
+    <h3>Payment Method</h3>
+    <p>◼️Cash/Debit    ◼️Cheque    ◼️Credit card</p>
+    <div class="rectangulo1"></div>
+    <div class="rectangulo2"></div>
+  </div>
+
+  <div class="extra-der">
+    <div class="firma">Signature</div>
+  </div>
+</div>
+
+</body>
+</html>
