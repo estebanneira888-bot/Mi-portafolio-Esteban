@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tienda</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background-color:#f5f5f5;
+}
+
+/* ENCABEZADO */
+
+.encabezado{
+    background-color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.encabezado img{
+    width:120px;
+}
+
+.menu{
+    margin-top:10px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:black;
+    margin:10px;
+    font-weight:bold;
+}
+
+/* BANNER */
+
+.banner{
+    background-color:lightgray;
+    text-align:center;
+    padding:50px;
+}
+
+.banner h1{
+    font-size:40px;
+    margin:0;
+}
+
+.ruta{
+    background-color:gold;
+    display:inline-block;
+    padding:10px;
+    margin-top:10px;
+}
+
+/* CONTENEDOR */
+
+.contenedor{
+    width:90%;
+    margin:auto;
+    margin-top:20px;
+}
+
+/* BARRA LATERAL */
+
+.barra{
+    width:25%;
+    background-color:white;
+    padding:15px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.barra h3{
+    border-bottom:1px solid gray;
+    padding-bottom:5px;
+}
+
+/* PRODUCTOS */
+
+.productos{
+    width:68%;
+    background-color:white;
+    padding:15px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.producto{
+    width:200px;
+    border:1px solid gray;
+    padding:10px;
+    margin:10px;
+    display:inline-block;
+    text-align:center;
+}
+
+.producto img{
+    width:150px;
+    height:150px;
+}
+
+.precio{
+    color:red;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ENCABEZADO -->
+
+<div class="encabezado">
+
+<img src="/portafolio/img/logoherramienta.png" alt="Logo">
+
+<div class="menu">
+<a href="#">INICIO</a>
+<a href="#">PRODUCTOS</a>
+<a href="#">ACERCA</a>
+<a href="#">SERVICIOS</a>
+</div>
+
+</div>
+
+<!-- BANNER -->
+
+<div class="banner">
+
+<h1>TIENDA</h1>
+
+<div class="ruta">
+Inicio / Productos
+</div>
+
+</div>
+
+<!-- CONTENEDOR -->
+
+<div class="contenedor">
+
+<!-- BARRA LATERAL -->
+
+<div class="barra">
+
+<h3>FILTRAR POR PRECIO</h3>
+
+<input type="range">
+
+<p>$12 - $55</p>
+
+<h3>CATEGORÍAS</h3>
+
+<ul>
+<li>Ropa (7)</li>
+<li>Sudaderas (3)</li>
+<li>Pósters (4)</li>
+<li>Camisetas (5)</li>
+</ul>
+
+</div>
+
+<!-- PRODUCTOS -->
+
+<div class="productos">
+
+<h2>Productos</h2>
+
+<div class="producto">
+<img src="https://m.media-amazon.com/images/I/61fWHpucEvL.jpg">
+<h4>Ninja Volador</h4>
+<p class="precio">$29.00</p>
+</div>
+
+<div class="producto">
+<img src="https://media.falabella.com/sodimacCO/240025/public">
+<h4>Ninja Feliz</h4>
+<p class="precio">$35.00</p>
+</div>
+
+<div class="producto">
+<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcROgm7xGpKDfQ2ad7vSjGRbIGqj0z7vigbXJa5wXRmIIdOJc3Ci">
+<h4>Ninja Woo</h4>
+<p class="precio">$55.00</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
